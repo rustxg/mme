@@ -27,8 +27,22 @@
 use core::ops::{Deref, DerefMut};
 use std::{ffi::c_void, path::PathBuf};
 
-include!("s1ap/rs/bindings.rs");
+// include!("s1ap/rs/bindings.rs");
+pub mod s1ap;
 
-fn create_s1ap_message(){
-    InitiatingMessage_t::
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use std::ffi::c_void;
+
+    fn new_context() -> asn_struct_ctx_t {
+        let ctx_struct: asn_struct_ctx_t = asn_struct_ctx_t {
+            phase: 0,
+            step: 0,
+            context: 0,
+            ptr: std::ptr::null_mut(),
+            left: 0i64,
+        };
+        ctx_struct
+    }
 }

@@ -50599,10 +50599,18 @@ const _: () = {
     ["Offset of field: __va_list_tag::reg_save_area"]
         [::std::mem::offset_of!(__va_list_tag, reg_save_area) - 16usize];
 };
+
+
+
+
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct __locale_data {
     pub _address: u8,
+}
+
+pub trait ASN1GenType {
+    unsafe fn get_descriptor() -> &'static asn_TYPE_descriptor_t;
 }
 
     impl ASN1GenType for ProtocolIE_Container_8143P0{
